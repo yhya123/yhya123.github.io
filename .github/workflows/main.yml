@@ -13,7 +13,10 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          # قمنا بتغيير القناة إلى beta لضمان الحصول على SDK حديث يتوافق مع متطلبات مشروعك
+          channel: 'beta' 
+          # أو يمكنك تحديد إصدار فلاتر الذي تستخدمه في جهازك بالضبط لضمان التطابق
+          # flutter-version: '3.44.0-0.3.pre' 
 
       - name: Install dependencies
         run: flutter pub get
