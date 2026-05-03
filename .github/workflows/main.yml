@@ -25,7 +25,7 @@ jobs:
 
       - name: Build Web
         # استبدل yhya123.github.io باسم مستودعك إذا كان مختلفاً
-        run: flutter build web --release --base-href "/" --web-renderer html
+        run: flutter build web --release --base-href "/"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
