@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/responsive/breakpoints.dart';
 import '../../core/theme/app_colors.dart';
@@ -25,7 +24,8 @@ class HeroSection extends StatefulWidget {
   State<HeroSection> createState() => _HeroSectionState();
 }
 
-class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStateMixin {
+class _HeroSectionState extends State<HeroSection>
+    with SingleTickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     vsync: this,
     duration: const Duration(milliseconds: 1100),
@@ -78,7 +78,10 @@ class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStat
     return FadeTransition(
       opacity: anim,
       child: SlideTransition(
-        position: Tween<Offset>(begin: slideBegin, end: Offset.zero).animate(anim),
+        position: Tween<Offset>(
+          begin: slideBegin,
+          end: Offset.zero,
+        ).animate(anim),
         child: child,
       ),
     );
@@ -90,10 +93,10 @@ class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStat
     final w = MediaQuery.sizeOf(context).width;
     final pad = w >= AppBreakpoints.desktop ? 64.0 : 24.0;
     final headline = Theme.of(context).textTheme.displaySmall?.copyWith(
-          fontWeight: FontWeight.w700,
-          height: 1.08,
-          letterSpacing: isArabic ? 0 : -0.6,
-        );
+      fontWeight: FontWeight.w700,
+      height: 1.08,
+      letterSpacing: isArabic ? 0 : -0.6,
+    );
 
     return Listener(
       behavior: HitTestBehavior.translucent,
@@ -104,11 +107,7 @@ class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStat
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [
-              Color(0xFF070B10),
-              Color(0xFF0B1220),
-              Color(0xFF0E1A2A),
-            ],
+            colors: [Color(0xFF070B10), Color(0xFF0B1220), Color(0xFF0E1A2A)],
           ),
         ),
         child: Stack(
@@ -120,7 +119,9 @@ class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStat
               top: -40,
               child: Transform.translate(
                 offset: Offset(_parallax.dx * 18, _parallax.dy * 11.7),
-                child: _GlowBlob(color: AppColors.accent.withValues(alpha: 0.2)),
+                child: _GlowBlob(
+                  color: AppColors.accent.withValues(alpha: 0.2),
+                ),
               ),
             ),
             Positioned(
@@ -129,7 +130,9 @@ class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStat
               bottom: -80,
               child: Transform.translate(
                 offset: Offset(_parallax.dx * 12, _parallax.dy * 7.8),
-                child: _GlowBlob(color: AppColors.accentDim.withValues(alpha: 0.16)),
+                child: _GlowBlob(
+                  color: AppColors.accentDim.withValues(alpha: 0.16),
+                ),
               ),
             ),
             Positioned(
@@ -138,7 +141,9 @@ class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStat
               top: 120,
               child: Transform.translate(
                 offset: Offset(_parallax.dx * 10, _parallax.dy * 6.5),
-                child: _GlowBlob(color: AppColors.humanWarm.withValues(alpha: 0.07)),
+                child: _GlowBlob(
+                  color: AppColors.humanWarm.withValues(alpha: 0.07),
+                ),
               ),
             ),
             Positioned(
@@ -160,18 +165,26 @@ class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStat
                       final content = Column(
                         crossAxisAlignment: stackVertical
                             ? CrossAxisAlignment.center
-                            : (isArabic ? CrossAxisAlignment.end : CrossAxisAlignment.start),
+                            : (isArabic
+                                  ? CrossAxisAlignment.end
+                                  : CrossAxisAlignment.start),
                         children: [
                           _fadeSlide(
                             intervalBegin: 0.0,
                             intervalEnd: 0.32,
                             slideBegin: const Offset(0, -0.04),
                             child: Text(
-                              AppStrings.t(isArabic: isArabic, key: 'hero_kicker'),
+                              AppStrings.t(
+                                isArabic: isArabic,
+                                key: 'hero_kicker',
+                              ),
                               textAlign: stackVertical
                                   ? TextAlign.center
-                                  : (isArabic ? TextAlign.right : TextAlign.left),
-                              style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                                  : (isArabic
+                                        ? TextAlign.right
+                                        : TextAlign.left),
+                              style: Theme.of(context).textTheme.labelLarge
+                                  ?.copyWith(
                                     color: AppColors.accent,
                                     letterSpacing: 1.2,
                                     fontWeight: FontWeight.w600,
@@ -183,10 +196,15 @@ class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStat
                             intervalBegin: 0.08,
                             intervalEnd: 0.45,
                             child: Text(
-                              AppStrings.t(isArabic: isArabic, key: 'hero_headline'),
+                              AppStrings.t(
+                                isArabic: isArabic,
+                                key: 'hero_headline',
+                              ),
                               textAlign: stackVertical
                                   ? TextAlign.center
-                                  : (isArabic ? TextAlign.right : TextAlign.left),
+                                  : (isArabic
+                                        ? TextAlign.right
+                                        : TextAlign.left),
                               style: headline,
                             ),
                           ),
@@ -198,8 +216,11 @@ class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStat
                               AppStrings.t(isArabic: isArabic, key: 'hero_sub'),
                               textAlign: stackVertical
                                   ? TextAlign.center
-                                  : (isArabic ? TextAlign.right : TextAlign.left),
-                              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                  : (isArabic
+                                        ? TextAlign.right
+                                        : TextAlign.left),
+                              style: Theme.of(context).textTheme.titleMedium
+                                  ?.copyWith(
                                     color: AppColors.textSecondary,
                                     height: 1.45,
                                     fontWeight: FontWeight.w400,
@@ -213,18 +234,34 @@ class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStat
                             child: Wrap(
                               spacing: 12,
                               runSpacing: 12,
-                              textDirection: isArabic ? TextDirection.rtl : TextDirection.ltr,
+                              textDirection: isArabic
+                                  ? TextDirection.rtl
+                                  : TextDirection.ltr,
                               alignment: stackVertical
                                   ? WrapAlignment.center
-                                  : (isArabic ? WrapAlignment.end : WrapAlignment.start),
+                                  : (isArabic
+                                        ? WrapAlignment.end
+                                        : WrapAlignment.start),
                               children: [
                                 ElevatedButton(
-                                  onPressed: () {/* TODO: mailto: or Calendly URL */},
-                                  child: Text(AppStrings.t(isArabic: isArabic, key: 'hero_cta_primary')),
+                                  onPressed: () {
+                                    /* TODO: mailto: or Calendly URL */
+                                  },
+                                  child: Text(
+                                    AppStrings.t(
+                                      isArabic: isArabic,
+                                      key: 'hero_cta_primary',
+                                    ),
+                                  ),
                                 ),
                                 OutlinedButton(
                                   onPressed: widget.onScrollToWork,
-                                  child: Text(AppStrings.t(isArabic: isArabic, key: 'hero_cta_secondary')),
+                                  child: Text(
+                                    AppStrings.t(
+                                      isArabic: isArabic,
+                                      key: 'hero_cta_secondary',
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
@@ -243,10 +280,16 @@ class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStat
                               borderRadius: BorderRadius.circular(20),
                               child: DecoratedBox(
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: AppColors.border.withValues(alpha: 0.65)),
+                                  border: Border.all(
+                                    color: AppColors.border.withValues(
+                                      alpha: 0.65,
+                                    ),
+                                  ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.black.withValues(alpha: 0.45),
+                                      color: Colors.black.withValues(
+                                        alpha: 0.45,
+                                      ),
                                       blurRadius: 28,
                                       offset: const Offset(0, 18),
                                     ),
@@ -258,15 +301,21 @@ class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStat
                                     Positioned.fill(
                                       child: ClipRRect(
                                         child: BackdropFilter(
-                                          filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+                                          filter: ImageFilter.blur(
+                                            sigmaX: 20,
+                                            sigmaY: 20,
+                                          ),
                                           child: DecoratedBox(
                                             decoration: BoxDecoration(
                                               gradient: LinearGradient(
                                                 begin: Alignment.topLeft,
                                                 end: Alignment.bottomRight,
                                                 colors: [
-                                                  AppColors.surfaceElevated.withValues(alpha: 0.35),
-                                                  AppColors.surface.withValues(alpha: 0.2),
+                                                  AppColors.surfaceElevated
+                                                      .withValues(alpha: 0.35),
+                                                  AppColors.surface.withValues(
+                                                    alpha: 0.2,
+                                                  ),
                                                 ],
                                               ),
                                             ),
@@ -284,9 +333,13 @@ class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStat
                             ),
                             const SizedBox(height: 12),
                             Text(
-                              AppStrings.t(isArabic: isArabic, key: 'brand_name'),
+                              AppStrings.t(
+                                isArabic: isArabic,
+                                key: 'brand_name',
+                              ),
                               textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                              style: Theme.of(context).textTheme.labelLarge
+                                  ?.copyWith(
                                     fontWeight: FontWeight.w600,
                                     letterSpacing: 0.8,
                                     color: AppColors.textSecondary,
@@ -298,11 +351,7 @@ class _HeroSectionState extends State<HeroSection> with SingleTickerProviderStat
 
                       if (stackVertical) {
                         return Column(
-                          children: [
-                            mark,
-                            const SizedBox(height: 28),
-                            content,
-                          ],
+                          children: [mark, const SizedBox(height: 28), content],
                         );
                       }
 
@@ -348,23 +397,15 @@ class _LiteraryGlassWhisper extends StatelessWidget {
         ? AppColors.textSecondary.withValues(alpha: 0.55)
         : AppColors.textSecondary;
 
-    final style = isArabic
-        ? GoogleFonts.cairo(
-            fontSize: 13.5,
-            height: 1.55,
-            fontWeight: FontWeight.w300,
-            fontStyle: FontStyle.italic,
-            color: base,
-            letterSpacing: 0.15,
-          )
-        : GoogleFonts.inter(
-            fontSize: 13.5,
-            height: 1.55,
-            fontWeight: FontWeight.w300,
-            fontStyle: FontStyle.italic,
-            color: base,
-            letterSpacing: 0.2,
-          );
+    final style = TextStyle(
+      fontFamily: 'Tajawal',
+      fontSize: 13.5,
+      height: 1.55,
+      fontWeight: FontWeight.w300,
+      fontStyle: FontStyle.italic,
+      color: base,
+      letterSpacing: isArabic ? 0.15 : 0.2,
+    );
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(14),
@@ -414,10 +455,7 @@ class _GlowBlob extends StatelessWidget {
       child: Container(
         width: 280,
         height: 280,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: color,
-        ),
+        decoration: BoxDecoration(shape: BoxShape.circle, color: color),
       ),
     );
   }

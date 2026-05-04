@@ -25,7 +25,7 @@ class _PortfolioAppState extends State<PortfolioApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppStrings.t(isArabic: _isArabic, key: 'app_title'),
-      theme: AppTheme.lightTech(_isArabic),
+      theme: AppTheme.lightTech(),
       locale: _isArabic ? const Locale('ar') : const Locale('en'),
       supportedLocales: const [
         Locale('en'),
