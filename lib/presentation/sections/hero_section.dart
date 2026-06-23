@@ -389,12 +389,12 @@ class _LiteraryGlassWhisper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final quote = isArabic
-        ? 'التفصيل ليس زينةً زائدة؛ إنه التصميم ذاته.'
-        : 'The detail is not the detail. It is the design.';
-    final attr = isArabic ? '— تشارلز إيمز' : '— Charles Eames';
+        ? "أعطني مكاناً لأقف فيه، ورافعة طويلة بما يكفي، وسأحرك العالم."
+        : "Give me a place to stand, and a lever long enough, and I will move the world.";
+    final attr = isArabic ? '—  أرخميدس' : '— Archimedes';
 
     final base = Theme.of(context).brightness == Brightness.dark
-        ? AppColors.textSecondary.withValues(alpha: 0.55)
+        ? AppColors.textSecondary.withValues(alpha: 0.75)
         : AppColors.textSecondary;
 
     final style = TextStyle(

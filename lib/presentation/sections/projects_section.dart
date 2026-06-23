@@ -11,11 +11,7 @@ import '../widgets/project_lead_media.dart';
 /// **Content Tip:** Project titles on tiles: **28–40 chars**. Summaries: **120–180**.
 /// Always show *one* measurable outcome (time saved, risk removed, scale supported).
 class ProjectsSection extends StatefulWidget {
-  const ProjectsSection({
-    super.key,
-    required this.isArabic,
-    this.onProjectTap,
-  });
+  const ProjectsSection({super.key, required this.isArabic, this.onProjectTap});
 
   final bool isArabic;
   final ValueChanged<ProjectModel>? onProjectTap;
@@ -92,10 +88,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
 }
 
 class _BentoGallery extends StatelessWidget {
-  const _BentoGallery({
-    required this.isArabic,
-    this.onProjectTap,
-  });
+  const _BentoGallery({required this.isArabic, this.onProjectTap});
 
   final bool isArabic;
   final ValueChanged<ProjectModel>? onProjectTap;

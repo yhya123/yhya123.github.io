@@ -15,7 +15,8 @@ abstract final class AppStrings {
       'nav_contact': 'Contact',
       'lang_toggle': 'العربية',
       'hero_kicker': 'Software Engineer & System Analyst',
-      'hero_headline': 'Systems engineered for clarity, scale, and years of service.',
+      'hero_headline':
+          'Systems engineered for clarity, scale, and years of service.',
       'hero_sub':
           'Structure you can trust, interfaces you can read — from Flutter craft to SQL-backed platforms.',
       'hero_cta_primary': 'Discuss your roadmap',
@@ -40,7 +41,7 @@ abstract final class AppStrings {
           'Where analysis, integrity, and product craft had to agree — without noise.',
       'contact_title': 'Ready when you are',
       'contact_body':
-        'If you are planning a platform migration, a high-stakes product build, or a system that must not fail quietly — let’s talk.',
+          'If you are planning a platform migration, a high-stakes product build, or a system that must not fail quietly — let’s talk.',
       'footer_github': 'github.com/yhya123',
       'footer_rights': '© 2026 Yahya Al-Washali',
       'case_study_back': 'Back to portfolio',
@@ -72,7 +73,8 @@ abstract final class AppStrings {
       'philosophy_step3_body':
           'تتبع من المتطلب إلى التنفيذ إلى التحقق — خصوصًا تحت ضغط التدقيق.',
       'stack_title': 'بصمة التقنية',
-      'stack_subtitle': 'اضغط على بطاقة — هذا المكدس الذي أستخدمه لمنتجات جادة.',
+      'stack_subtitle':
+          'اضغط على بطاقة — هذا المكدس الذي أستخدمه لمنتجات جادة.',
       'projects_title': 'مشاريع مختارة',
       'projects_subtitle':
           'حيث يلتقي التحليل وتكامل البيانات وحرفية المنتج — بصمت مهني.',
