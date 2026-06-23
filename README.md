@@ -1,17 +1,21 @@
-# myportfilo
+## My Portfolio Website
+This repository contains the source code for my personal portfolio website built with Flutter Web and hosted via GitHub Pages.
+## 🚀 Live Demo
+View the live website here: [Your Website URL Link Here]
+## ✨ Features
 
-A new Flutter project.
+* Responsive Design: Optimized for mobile, tablet, and desktop screens.
+* Fast & Fluid: Smooth animations and performance powered by Flutter.
+* Project Showcase: Highlights my development work and skills.
 
-## Getting Started
+## 🛠️ Built With
 
-This project is a starting point for a Flutter application.
+* Framework: Flutter (Web)
+* Language: Dart
 
-A few resources to get you started if this is your first Flutter project:
+   
+## 📄 License
+This project is open-source and available under the MIT License.
+------------------------------
+If you want to expand this later, would you like me to add a custom design preview section or a contact information block?
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
