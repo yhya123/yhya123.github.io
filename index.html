@@ -41,6 +41,25 @@
     For more details:
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
-  <script src="flutter_bootstrap.js" async></script>
+  <script>
+    // 1. تحديد مسار CanvasKit محلياً لتجنب حجب سيرفرات جوجل في اليمن
+    window.flutterConfiguration = {
+      canvasKitBaseUrl: "./canvaskit/"
+    };
+
+    // 2. كود تشغيل فلاتر الافتراضي
+    window.addEventListener('load', function(ev) {
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
