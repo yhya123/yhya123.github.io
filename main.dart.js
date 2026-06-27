@@ -27119,7 +27119,7 @@ $S:2}
 A.au7.prototype={
 $1(a){var s=A.cV().b
 s=s==null?null:s.canvasKitBaseUrl
-return(s==null?"https://www.gstatic.com/flutter-canvaskit/300972dbc0d1446c761c6856717cc5a00dfec2d0/":s)+a},
+return(s==null?"https://www.gstatic.com/flutter-canvaskit/a24b1ea55dedf3ce992cae0fbc1012b22b373290/":s)+a},
 $S:58}
 A.LO.prototype={
 gv(a){var s=this.a
